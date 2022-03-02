@@ -50,6 +50,7 @@ pipeline {
         stage('Build package') {
             steps {
                 container('node') {
+                    sh "yarn cache clean"
                     sh "yarn install"
                 }
             }
